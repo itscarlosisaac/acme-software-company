@@ -5,6 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const srcDir =  path.resolve(__dirname, 'client')
 const distDir = path.resolve(__dirname, 'dist');
+const devMode = process.env.NODE_ENV !== 'production'
 
 module.exports = (env) => {
 
@@ -34,17 +35,17 @@ module.exports = (env) => {
           test:  /\.js$/,
           exclude: /node_modules/
         },{
-          test: /\.css/,
-          use: [{
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath:'./'
-            }
-          }, 'css-loader']
+          test: /\.(sa|sc|c)ss$/,
+          use: [
+            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            'css-loader',
+            'postcss-loader',
+            'sass-loader',
+          ],
         }
       ]
     },
-    plugins: [CopyWebpack, HMR ],
+    plugins: [CopyWebpack, HMR, MiniCSSExtract ],
     devtool: 'inline-source-map',
     devServer: {
       historyApiFallback: true,
