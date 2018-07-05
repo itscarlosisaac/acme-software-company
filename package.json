@@ -1,0 +1,40 @@
+{
+  "name": "gifnaton",
+  "version": "0.0.1",
+  "description": "A Gif search webapp",
+  "author": "Carlos Isaac Martinez Batista <itscarlosisaac@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "webpack",
+    "build:prod": "webpack -p --env production",
+    "client": "webpack-dev-server"
+  },
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "env": "^0.0.2",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.1",
+    "normalize.css": "^8.0.0",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "sass-loader": "^7.0.3",
+    "style-loader": "^0.21.0",
+    "webpack": "^4.15.1",
+    "webpack-dev-server": "^3.1.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.24.5",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "copy-webpack-plugin": "^4.5.2",
+    "webpack-cli": "^3.0.8"
+  }
+}
