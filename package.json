@@ -11,6 +11,7 @@
     "client": "webpack-dev-server"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "babel": "^6.23.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
@@ -26,6 +27,7 @@
     "normalize.css": "^8.0.0",
     "prop-types": "^15.6.2",
     "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "sass-loader": "^7.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.15.1",
