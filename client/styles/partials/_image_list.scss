@@ -1,3 +1,33 @@
 .app__image__gallery{
-  min-height: calc((100vh - 600px) - 90px)
+  min-height: calc((100vh - 600px) - 90px);
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px 30px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 1440px;
+  align-items: flex-start;
+  .image__card{
+    box-sizing: border-box;
+    flex-basis: 20%;
+    padding: 0 10px;
+    cursor: pointer;
+    &--thumb{
+      width: 100%;
+      img{
+        width: 100%;
+      }
+    }
+    &--title{
+      text-align: left;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding: 10px 0 10px 20px;
+      background: #f3f3f3;
+      margin-top: -5px;
+      z-index: 10;
+      position: relative;
+    }
+  }
 }

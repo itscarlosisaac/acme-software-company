@@ -18,7 +18,12 @@ export default class ImageCardList extends Component {
       <div className="app__image__gallery">
         {
           this.state.images.map( (current) => {
-            return <ImageCard image={current.images.original_still.url} title={current.title}/>
+            return ( 
+                <ImageCard 
+                image={current.images.original_still.url} 
+                title={current.title} 
+                gifUrl={current.images.downsized.url}/>
+              )
           })
         }
       </div>
