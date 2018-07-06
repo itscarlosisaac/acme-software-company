@@ -28,3 +28,9 @@ Your project will be manually reviewed and scored by an engineer according to th
 - React JS
 - Node JS
 - Canvas
+
+## Run the Project
+
+To run the project, open the terminal in the root directory.
+- Run Yarn to install all the dependencies
+- Run `yarn client` to run the project in the port 8080

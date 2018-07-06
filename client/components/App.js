@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 // Importing components
 import Header from './Header';
-import Footer from './Footer';
 import ImageCardList from './ImageCardList';
 import LightBox from './Lightbox';
+import Footer from './Footer';
 import EventEmitter from '../events/emitter'
 
 export default class App extends Component {
