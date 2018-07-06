@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import EventEmitter from '../events/emitter'
 
 export default class LightBox extends Component {  
   render() {
@@ -11,7 +10,10 @@ export default class LightBox extends Component {
             <img 
               src={ this.props.image.images.downsized.url } 
               alt={ this.props.image.title } />
-            <h3 className="app__lightbox__title">{ this.props.image.title } </h3>
+            {
+              this.props.image.title ? 
+              <h3 className="app__lightbox__title">{ this.props.image.title } </h3> : ''
+            }
           <p className="app__lightbox__next" onClick={this.props.next}>Next</p>
         </div>
       </div>

@@ -1,5 +1,5 @@
 .app__lightbox__container {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   bottom: 0;
@@ -16,6 +16,7 @@
     position: relative;
     img {
       width: 100%;
+      max-height: calc(100vh - 100px)
     }
   }
   .app__lightbox {
