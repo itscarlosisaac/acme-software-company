@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500');
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,200,300,400,500');
 
 @import './partials/_header';
+@import './partials/_form';
 @import './partials/_image_list';
 @import './partials/_footer';
 

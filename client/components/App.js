@@ -15,14 +15,17 @@ export default class App extends Component {
     offset: 0,
     showLightBox: false,
     currentLightBoxImage: {},
+    hasSearch: false
   }
 
   componentWillMount = () => {
     EventEmitter.on('LoadGifs', (data) => {
       let upcomingData = [ ...data ]
+      let upcomingSearch = data.length > 1;
       this.setState({ 
         loadedGif: upcomingData,
-        count: upcomingData.length
+        count: upcomingData.length,
+        hasSearch: upcomingSearch
        })
     })
   }
@@ -58,7 +61,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="app__container">
-        <Header />
+        <Header shrinked={this.state.hasSearch} />
 
         <ImageCardList 
           handleThumbClick={this.handleThumbClick}

@@ -30,7 +30,7 @@ export default class SearchFor extends Component {
   render() {
     return (
       <Fragment>
-        <form onSubmit={this.handleSubmit}>
+        <form className="app__search" onSubmit={this.handleSubmit}>
           <input type="text" value={this.state.value} onChange={this.handleChange} placeholder="Search for a gif" />
         </form>
       </Fragment>
