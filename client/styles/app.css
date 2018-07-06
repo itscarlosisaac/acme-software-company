@@ -1,1 +1,11 @@
-@import './partials/_header'
+@import url('https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,400,500');
+
+@import './partials/_header';
+@import './partials/_image_list';
+@import './partials/_footer';
+
+body{
+  -webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  font-family: 'IBM Plex Sans', sans-serif;
+}

@@ -1,0 +1,35 @@
+.app__header{
+  background: #263148; 
+  background: -moz-linear-gradient(45deg, #263148 1%, #586790 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #263148 1%,#586790 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #263148 1%,#586790 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#263148', endColorstr='#586790',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  height:600px ;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  canvas{
+    position: absolute;
+    left:0;
+    top:0;
+  }
+  .app__logo{
+    position: absolute;
+    left:0;
+    right: 0;
+    margin: auto;
+    top:70px;
+  }
+  &--title{
+    text-align: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: #FFFFFF;
+    letter-spacing: 0.59px;
+    text-align: center;
+  }
+}
