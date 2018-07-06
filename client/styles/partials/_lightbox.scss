@@ -1,0 +1,75 @@
+.app__lightbox__container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .app__lightbox__content {
+    width: 600px;
+    height: auto;
+    position: relative;
+    img {
+      width: 100%;
+    }
+  }
+  .app__lightbox {
+    &__title{
+      background: #ffffff;
+      margin: -2px 0 0 0;
+      padding: 10px;
+    }
+    &__close {
+      position: absolute;
+      right: 0;
+      top: 0;
+      margin: 0;
+      padding: 20px;
+      background: white;
+      height: 40px;
+      width: 40px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+    &__prev,
+    &__next {
+      cursor: pointer;
+      position: absolute;
+      padding: 20px;
+      background: white;
+      height: 40px;
+      width: 60px;
+      box-sizing: border-box;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: .8em;
+      letter-spacing: .6pt;
+      font-weight: 500;
+      top:0;
+      bottom:0;
+      margin: auto;
+    }
+    &__prev{
+      left: 0;
+    }
+    &__next{
+      right: 0;
+    }
+  }
+}
+
+@media all and (max-width:768px){
+  .app__lightbox__content{
+    margin: 0 20px;
+  }
+}

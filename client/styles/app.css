@@ -2,6 +2,7 @@
 
 @import './partials/_header';
 @import './partials/_form';
+@import './partials/_lightbox';
 @import './partials/_image_list';
 @import './partials/_footer';
 

@@ -51,7 +51,7 @@ module.exports = (env) => {
       historyApiFallback: true,
       contentBase: distDir,
       watchContentBase: true,
-      port: process.env.WEBPACK_SERVER_PORT
+      port: process.env.WEBPACK_SERVER_PORT || 8000
     }
   }
 
