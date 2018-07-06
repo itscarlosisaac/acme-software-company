@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 // Importing components
 import Header from './Header';
 import Footer from './Footer';
+import ImageCardList from './ImageCardList';
 
 export default class App extends Component {
 
@@ -16,6 +17,7 @@ export default class App extends Component {
     return (
       <div className="app__container">
         <Header />
+        <ImageCardList />
         <Footer />
       </div>
     )
