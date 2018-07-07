@@ -70,6 +70,24 @@
   }
 }
 
+.lightbox-enter {
+  opacity: 0.01;
+}
+
+.lightbox-enter.lightbox-enter-active {
+  opacity: 1;
+  transition: opacity 1500ms ease-in;
+}
+
+.lightbox-leave {
+  opacity: 1;
+}
+
+.lightbox-leave.lightbox-leave-active {
+  opacity: 0.01;
+  transition: opacity 1300ms ease-in;
+}
+
 @media all and (max-width:768px){
   .app__lightbox__content{
     margin: 0 20px;

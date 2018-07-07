@@ -5,11 +5,8 @@ export default {
   FecthData(term, limit, offset, cb){
     const URL = `http://api.giphy.com/v1/gifs/search?q=${term}&api_key=${API_KEY}&limit=${limit}&offset=${offset}`
     axios.get(URL)
-      .then(response => {
-        const data = response.data.data
-        return data;
-      })
-      .then((data) => cb(data) )
+      .then( response => response.data.data )
+      .then( data => cb(data) )
       .catch(function (error) {
         console.log(error);
       })

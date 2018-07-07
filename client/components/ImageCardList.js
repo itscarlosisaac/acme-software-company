@@ -1,25 +1,31 @@
 import React, { Component } from 'react'
 import ImageCard from './ImageCard';
+import { CSSTransitionGroup } from 'react-transition-group'
+
 
 export default class ImageCardList extends Component {
 
   render() {
+    const cards = this.props.cards.map( (current) => {
+      return ( 
+          <ImageCard 
+            handleThumbClick={this.props.handleThumbClick}
+            key={current.id}
+            id={current.id}
+            image={current.images.original_still.url} 
+            title={current.title} 
+            gifUrl={current.images.downsized.url}
+          />
+        )
+    })
     return (
       <div className="app__image__gallery">
-        {
-          this.props.cards.map( (current) => {
-            return ( 
-                <ImageCard 
-                  handleThumbClick={this.props.handleThumbClick}
-                  key={current.id}
-                  id={current.id}
-                  image={current.images.original_still.url} 
-                  title={current.title} 
-                  gifUrl={current.images.downsized.url}
-                />
-              )
-          })
-        }
+        <CSSTransitionGroup
+          transitionName="card"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300} >
+          {cards}
+        </CSSTransitionGroup>
       </div>
     )
   }

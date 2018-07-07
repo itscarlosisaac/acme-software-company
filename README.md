@@ -28,6 +28,7 @@ Your project will be manually reviewed and scored by an engineer according to th
 - React JS
 - Node JS
 - Canvas
+- Axios
 
 ## Run the Project
 

@@ -12,11 +12,11 @@ export default class SearchFor extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     GifServices.FecthData(this.state.value, 20, 0, (data) => {
-      this.setState( (prevState) => {
-        EventEmitter.emit('LoadGifs', data)
+      this.setState( () => {
+        EventEmitter.emit('LoadGifs', data, this.state.value)
         return { 
             gifs: data,
-            gifCount: data.length
+            gifCount: data.length,
           }
       })
     })
