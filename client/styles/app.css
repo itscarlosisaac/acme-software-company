@@ -5,6 +5,7 @@
 @import './partials/_lightbox';
 @import './partials/_image_list';
 @import './partials/_footer';
+@import './partials/_loadmore';
 
 body{
   -webkit-font-smoothing: antialiased;
