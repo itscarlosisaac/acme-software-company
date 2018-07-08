@@ -47,6 +47,16 @@ export default class App extends Component {
         offset
        })
     })
+
+    window.addEventListener('keyup', (evt) => {
+      if( this.state.showLightBox){
+        if( evt.keyCode == 39){
+          this.handleNext();
+        }else if(evt.keyCode == 37){
+          this.handlePrev();
+        }
+      }
+    })
   }
 
   handleNext = () => {
@@ -87,7 +97,7 @@ export default class App extends Component {
   render() {
     const LightBoxItem = <LightBox close={this.closeLightBox} image={this.state.currentLightBoxImage} prev={this.handlePrev} next={this.handleNext} />
     return (
-      <div className="app__container">
+      <div className="app__container" onKeyUp={this.handleKeyPress}>
         <Header shrinked={this.state.hasSearch} />
 
         <ImageCardList 
