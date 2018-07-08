@@ -9,7 +9,7 @@ export default class Header extends Component {
     return (
       <header 
         className={this.props.shrinked ? `app__header app__header--shrinked`: `app__header`}>
-        {/* <Canvas /> */}
+        <Canvas />
         <Logo w="140" />
         <h2 className="app__header--title">Welcome to the funniest gif <br/> search website.</h2>
         <SearchFor />

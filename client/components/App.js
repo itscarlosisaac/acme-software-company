@@ -1,11 +1,16 @@
 import React, { Component } from 'react'
+import { CSSTransitionGroup } from 'react-transition-group'
 
 // Importing components
 import Header from './Header';
 import ImageCardList from './ImageCardList';
 import LightBox from './Lightbox';
+import LoadMoreButton from './LoadMoreButton'
 import Footer from './Footer';
 import EventEmitter from '../events/emitter'
+
+// Importing Service
+import GifServices from '../services/gifServices'
 
 export default class App extends Component {
 
@@ -15,17 +20,31 @@ export default class App extends Component {
     offset: 0,
     showLightBox: false,
     currentLightBoxImage: {},
-    hasSearch: false
+    hasSearch: false,
+    searchValue: ''
   }
 
   componentWillMount = () => {
-    EventEmitter.on('LoadGifs', (data) => {
+    EventEmitter.on('LoadGifs', (data, value) => {
       let upcomingData = [ ...data ]
       let upcomingSearch = data.length > 1;
       this.setState({ 
         loadedGif: upcomingData,
         count: upcomingData.length,
-        hasSearch: upcomingSearch
+        hasSearch: upcomingSearch,
+        searchValue: value,
+        offset:20
+       })
+    })
+
+    EventEmitter.on('LoadMoreGifs', ( data ) => {
+      let upcomingData = [ ...this.state.loadedGif, ...data ]
+      let count = upcomingData.length
+      let offset = this.state.offset + 20
+      this.setState({ 
+        loadedGif: upcomingData,
+        count,
+        offset
        })
     })
   }
@@ -58,7 +77,15 @@ export default class App extends Component {
     this.setState({ showLightBox: false })
   }
 
+  handleLoadMore = () => {
+    const { searchValue, offset } = this.state
+    GifServices.FecthData( searchValue, 20, offset, (data) => {
+      EventEmitter.emit('LoadMoreGifs', data )
+    })
+  }
+
   render() {
+    const LightBoxItem = <LightBox close={this.closeLightBox} image={this.state.currentLightBoxImage} prev={this.handlePrev} next={this.handleNext} />
     return (
       <div className="app__container">
         <Header shrinked={this.state.hasSearch} />
@@ -69,13 +96,19 @@ export default class App extends Component {
 
         {
           this.state.showLightBox ? 
-          <LightBox 
-            close={this.closeLightBox}
-            image={this.state.currentLightBoxImage} 
-            prev={this.handlePrev}
-            next={this.handleNext}  /> : ''
+          <CSSTransitionGroup
+          transitionName="lightbox"
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={300} >
+          {LightBoxItem}
+        </CSSTransitionGroup> : ''
         }
 
+        {
+          this.state.hasSearch ? 
+          <LoadMoreButton 
+            handleLoadMore={this.handleLoadMore} /> : ''
+        }
         <Footer />
       </div>
     )
