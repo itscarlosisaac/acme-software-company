@@ -40,3 +40,4 @@ To run the project, open the terminal in the root directory.
 ## Lightbox
 
 - Supports arrow left or right to change image.
+- Supports close by pressing the `esc` key

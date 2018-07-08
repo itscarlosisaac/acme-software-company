@@ -67,6 +67,8 @@ export default class App extends Component {
     let nextImage = this.state.loadedGif[currentIndex + 1];
     if( nextImage !== undefined){
       this.setState({ currentLightBoxImage: nextImage })
+    }else{
+      this.setState({ currentLightBoxImage: this.state.loadedGif[0] })
     }
   }
 
@@ -75,6 +77,8 @@ export default class App extends Component {
     let prevImage = this.state.loadedGif[currentIndex - 1];
     if( prevImage !== undefined){
       this.setState({ currentLightBoxImage: prevImage })
+    }else{
+      this.setState({ currentLightBoxImage: this.state.loadedGif[this.state.loadedGif.length - 1] })
     }
   }
 
