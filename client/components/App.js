@@ -78,7 +78,7 @@ export default class App extends Component {
     if( prevImage !== undefined){
       this.setState({ currentLightBoxImage: prevImage })
     }else{
-      this.setState({ currentLightBoxImage: this.state.loadedGif[this.state.loadedGif.length - 1] })
+      this.setState({ currentLightBoxImage: this.state.loadedGif[ this.state.loadedGif.length - 1] })
     }
   }
 

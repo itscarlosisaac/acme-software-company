@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const srcDir =  path.resolve(__dirname, 'client')
 const distDir = path.resolve(__dirname, 'dist');
-const devMode = process.env.NODE_ENV !== 'production'
+const devMode = process.env.NODE_ENV === 'development'
 
 module.exports = (env) => {
 
@@ -22,7 +22,7 @@ module.exports = (env) => {
   const HMR = new webpack.HotModuleReplacementPlugin();
 
   return {
-    mode: 'development',
+    mode: devMode || 'production',
     entry: './client/app.js',
     output: {
       filename: 'app.bundle.js',
@@ -37,7 +37,7 @@ module.exports = (env) => {
         },{
           test: /\.(sa|sc|c)ss$/,
           use: [
-            devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+            !devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
             'css-loader',
             'postcss-loader',
             'sass-loader',
@@ -46,7 +46,7 @@ module.exports = (env) => {
       ]
     },
     plugins: [CopyWebpack, HMR, MiniCSSExtract ],
-    devtool: 'inline-source-map',
+    devtool:  devMode ? 'inline-source-map' : 'source-map' ,
     devServer: {
       historyApiFallback: true,
       contentBase: distDir,
@@ -54,5 +54,4 @@ module.exports = (env) => {
       port: process.env.WEBPACK_SERVER_PORT || 8000
     }
   }
-
 }
