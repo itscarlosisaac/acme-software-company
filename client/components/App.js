@@ -49,11 +49,14 @@ export default class App extends Component {
     })
 
     window.addEventListener('keyup', (evt) => {
+      // console.log(evt)
       if( this.state.showLightBox){
         if( evt.keyCode == 39){
           this.handleNext();
         }else if(evt.keyCode == 37){
           this.handlePrev();
+        }else if(evt.keyCode == 27){
+          this.closeLightBox();
         }
       }
     })

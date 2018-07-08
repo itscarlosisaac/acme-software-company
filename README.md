@@ -36,3 +36,7 @@ To run the project, open the terminal in the root directory.
 - Run `yarn` in the terminal to install all the dependencies
 - Run `yarn client` to run the project in the port 8080
 - Open chrome and navigate to http://localhost:8000/
+
+## Lightbox
+
+- Supports arrow left or right to change image.
