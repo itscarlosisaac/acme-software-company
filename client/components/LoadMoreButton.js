@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import PropTypes from 'prop-types';
 export default class LoadMoreButton extends Component {
   render() {
     return (
@@ -10,4 +10,8 @@ export default class LoadMoreButton extends Component {
       </div>
     )
   }
+}
+
+LoadMoreButton.propTypes = {
+  handleLoadMore: PropTypes.func.isRequired,
 }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
-export default class LightBox extends Component {  
+export default class LightBox extends Component {
   render() {
     return (
       <div className="app__lightbox__container">
@@ -19,4 +20,11 @@ export default class LightBox extends Component {
       </div>
     )
   }
+}
+
+LightBox.propTypes = {
+  image: PropTypes.object.isRequired,
+  prev: PropTypes.func.isRequired,
+  close: PropTypes.func.isRequired,
+  next: PropTypes.func.isRequired,
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 import Canvas from './Canvas';
 import SearchFor from './SearchFor';
 
@@ -7,7 +8,7 @@ import Logo from './Logo';
 export default class Header extends Component {
   render() {
     return (
-      <header 
+      <header
         className={this.props.shrinked ? `app__header app__header--shrinked`: `app__header`}>
         <Canvas />
         <Logo w="140" />
@@ -16,4 +17,8 @@ export default class Header extends Component {
       </header>
     )
   }
-} 
+}
+
+Header.propTypes = {
+  shrinked: PropTypes.string.isRequired
+};

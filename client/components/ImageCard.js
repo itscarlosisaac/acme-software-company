@@ -1,9 +1,10 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 export default class ImageCard extends Component {
 
   handleClick = () => {
-    this.props.handleThumbClick(this.props.id) 
+    this.props.handleThumbClick(this.props.id)
   }
   render() {
     return (
@@ -15,4 +16,10 @@ export default class ImageCard extends Component {
       </div>
     )
   }
+}
+
+ImageCard.propTypes = {
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  handleThumbClick: PropTypes.func.isRequired,
 }

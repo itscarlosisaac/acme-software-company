@@ -14,7 +14,7 @@ export default class SearchFor extends Component {
     GifServices.FecthData(this.state.value, 20, 0, (data) => {
       this.setState( () => {
         EventEmitter.emit('LoadGifs', data, this.state.value)
-        return { 
+        return {
             gifs: data,
             gifCount: data.length,
           }
@@ -37,3 +37,6 @@ export default class SearchFor extends Component {
     )
   }
 }
+
+
+

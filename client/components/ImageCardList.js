@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import ImageCard from './ImageCard';
 import { CSSTransitionGroup } from 'react-transition-group'
-
+import PropTypes from 'prop-types';
 
 export default class ImageCardList extends Component {
 
@@ -29,4 +29,10 @@ export default class ImageCardList extends Component {
       </div>
     )
   }
+}
+
+
+ImageCardList.propTypes = {
+  cards: PropTypes.arrayOf(PropTypes.object).isRequired,
+  handleThumbClick: PropTypes.func.isRequired,
 }

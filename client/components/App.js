@@ -6,7 +6,7 @@ import Header from './Header';
 import ImageCardList from './ImageCardList';
 import LightBox from './Lightbox';
 import LoadMoreButton from './LoadMoreButton'
-import Footer from './Footer';
+import { Footer } from './Footer';
 import EventEmitter from '../events/emitter'
 
 // Importing Service
@@ -84,7 +84,7 @@ export default class App extends Component {
 
   handleThumbClick = (id) => {
     let curr = this.state.loadedGif.filter( (item) => item.id === id )
-    this.setState({ 
+    this.setState({
       showLightBox: true,
       currentLightBoxImage: curr[0]
     })
@@ -98,7 +98,7 @@ export default class App extends Component {
     const { searchValue, offset } = this.state
     GifServices.FecthData( searchValue, 20, offset, (data) => {
       EventEmitter.emit('LoadMoreGifs', data )
-    })
+    });
   }
 
   render() {
@@ -107,7 +107,7 @@ export default class App extends Component {
       <div className="app__container" onKeyUp={this.handleKeyPress}>
         <Header shrinked={this.state.hasSearch} />
 
-        <ImageCardList 
+        <ImageCardList
           handleThumbClick={this.handleThumbClick}
           cards={this.state.loadedGif} />
 
@@ -122,8 +122,8 @@ export default class App extends Component {
         }
 
         {
-          this.state.hasSearch ? 
-          <LoadMoreButton 
+          this.state.hasSearch ?
+          <LoadMoreButton
             handleLoadMore={this.handleLoadMore} /> : ''
         }
         <Footer />

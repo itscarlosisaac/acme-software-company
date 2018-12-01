@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-
+import PropTypes from 'prop-types';
 export default class Logo extends Component {
   render() {
     return (
@@ -9,3 +9,11 @@ export default class Logo extends Component {
     )
   }
 }
+
+Logo.propTypes = {
+  w: PropTypes.number,
+}
+
+Logo.defaultProp = {
+  w: 140,
+};
