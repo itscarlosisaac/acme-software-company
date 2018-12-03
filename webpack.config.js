@@ -46,7 +46,7 @@ module.exports = (env) => {
       ]
     },
     plugins: [CopyWebpack, HMR, MiniCSSExtract ],
-    devtool:  devMode ? 'cheap-module-eval-source-map' : 'source-map' ,
+    devtool:  devMode ? 'inline-source-map' : 'source-map' ,
     devServer: {
       historyApiFallback: true,
       contentBase: distDir,

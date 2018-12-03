@@ -6,7 +6,7 @@ import Header from './Header';
 import ImageCardList from './ImageCardList';
 import LightBox from './Lightbox';
 import LoadMoreButton from './LoadMoreButton'
-import { Footer } from './Footer';
+import Footer from './Footer';
 import EventEmitter from '../events/emitter'
 
 // Importing Service
@@ -28,7 +28,7 @@ export default class App extends Component {
     EventEmitter.on('LoadGifs', (data, value) => {
       let upcomingData = [ ...data ]
       let upcomingSearch = data.length > 1;
-      this.setState({ 
+      this.setState({
         loadedGif: upcomingData,
         count: upcomingData.length,
         hasSearch: upcomingSearch,
@@ -112,7 +112,7 @@ export default class App extends Component {
           cards={this.state.loadedGif} />
 
         {
-          this.state.showLightBox ? 
+          this.state.showLightBox ?
           <CSSTransitionGroup
           transitionName="lightbox"
           transitionEnterTimeout={500}

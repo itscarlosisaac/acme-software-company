@@ -1,0 +1,6 @@
+{
+  "name": "gifnaton",
+  "jest": {
+    "verbose": true
+  }
+}
