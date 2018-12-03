@@ -8,6 +8,12 @@ import toJson from 'enzyme-to-json';
 configure({adapter: new Adapter() });
 
 describe(`<Logo /> - Logo Component`, () => {
+
+  it(`Renders the component`, () => {
+    const wrapper = shallow(<Logo w={140} />);
+    expect(wrapper.exists()).toBe(true);
+  });
+
   it(`Should accept a size prop`, () => {
     const wrapper = shallow(<Logo w={140} />);
     expect(wrapper.instance().props.w).toBe(140);

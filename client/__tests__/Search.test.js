@@ -4,6 +4,7 @@ import SearchFor from '../components/SearchFor';
 import { configure, shallow, mount } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
 import toJson from 'enzyme-to-json';
+import gifServices from '../services/gifServices';
 
 configure({adapter: new Adapter() });
 
@@ -31,6 +32,14 @@ describe(`<SearchFor/> - Search Component`, () => {
     expect(prevented).toBe(true)
   })
 
+  it('Should prevent submit empty form', () => {
+    const wrapper = shallow(<SearchFor />);
+    const input = wrapper.find('input');
+    input.simulate('change', { target: {value: "jackie" }});
+    wrapper.find('form').simulate("submit", {preventDefault: () => {}});
+    expect(wrapper.state().value.length).toBeGreaterThan(0);
+  })
+
   it('On Submit should update states gif count and gifs array', () => {
     const wrapper = mount(<SearchFor/>);
     const form = wrapper.find('form');
@@ -38,9 +47,22 @@ describe(`<SearchFor/> - Search Component`, () => {
       preventDefault: () => {
         wrapper.setState({ gifCount: 20, gifs: new Array(20) });
       }
-    } );
+    });
     expect(wrapper.state().gifCount).toBe(20)
     expect(wrapper.state().gifs.length).toBe(20)
+  });
+
+  it('Should perform search to the API', (done) => {
+    const searchTerm = 'comic';
+    gifServices.FecthData(searchTerm, 20, 0, (data) => {
+      apiCall(data)
+    });
+
+    function apiCall(data){
+      let upcomingData = [ ...data ]
+      expect(upcomingData.length).toBe(20)
+      done()
+    }
   });
 
   it(`Should Match the snapshot`, () => {
