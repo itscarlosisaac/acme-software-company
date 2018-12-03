@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadMoreButton> Matches the snapshot 1`] = `
+<div
+  className="app__load__more"
+>
+  <button
+    onClick={[Function]}
+  >
+    Load More Gifs
+  </button>
+</div>
+`;
