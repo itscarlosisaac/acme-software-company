@@ -19,7 +19,16 @@ describe('<LoadMoreButton>', () => {
     const wrapper = shallow(<LoadMoreButton handleLoadMore={()=> {}} />)
     const f = typeof wrapper.instance().props.handleLoadMore;
     expect(f).toBe('function')
-  })
+  });
+
+  it(`Should perform an action on click`, () => {
+    const mockCallBack = jest.fn();
+    const wrapper = shallow(<LoadMoreButton handleLoadMore={mockCallBack()} />)
+
+    wrapper.find('button').simulate('click');
+    expect(mockCallBack.mock.calls.length).toEqual(1);
+  });
+
   it(`Matches the snapshot`, () => {
     const tree = shallow(<LoadMoreButton handleLoadMore={()=>{}} />);
     expect(toJson(tree)).toMatchSnapshot();
