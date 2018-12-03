@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SearchFor/> - Search Component Should Match the snapshot 1`] = `
+<Fragment>
+  <form
+    className="app__search"
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="Search for a gif"
+      type="text"
+      value=""
+    />
+  </form>
+</Fragment>
+`;

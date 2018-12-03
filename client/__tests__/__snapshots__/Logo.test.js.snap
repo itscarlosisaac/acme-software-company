@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Logo /> - Logo Component Should Match the snapshot 1`] = `
+<Fragment>
+  <img
+    className="app__logo"
+    src="./assets/logo.svg"
+    width={140}
+  />
+</Fragment>
+`;
