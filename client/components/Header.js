@@ -20,5 +20,5 @@ export default class Header extends Component {
 }
 
 Header.propTypes = {
-  shrinked: PropTypes.string.isRequired
+  shrinked: PropTypes.string.bool
 };
