@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<LoadMoreButton> Matches the snapshot 1`] = `
+<div
+  className="image__card"
+  onClick={[Function]}
+>
+  <div
+    className="image__card--thumb"
+  >
+    <img
+      alt="My image"
+      src="https://media0.giphy.com/media/3o7TKqLfSYZwuyJfCo/giphy_s.gif"
+    />
+  </div>
+  <h3
+    className="image__card--title"
+  >
+    My image
+  </h3>
+</div>
+`;
