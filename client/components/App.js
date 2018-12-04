@@ -41,7 +41,7 @@ export default class App extends Component {
       let upcomingData = [ ...this.state.loadedGif, ...data ]
       let count = upcomingData.length
       let offset = this.state.offset + 20
-      this.setState({ 
+      this.setState({
         loadedGif: upcomingData,
         count,
         offset
@@ -102,7 +102,11 @@ export default class App extends Component {
   }
 
   render() {
-    const LightBoxItem = <LightBox close={this.closeLightBox} image={this.state.currentLightBoxImage} prev={this.handlePrev} next={this.handleNext} />
+    const LightBoxItem = <LightBox
+          close={this.closeLightBox}
+          image={this.state.currentLightBoxImage}
+          prev={this.handlePrev}
+          next={this.handleNext} />
     return (
       <div className="app__container" onKeyUp={this.handleKeyPress}>
         <Header shrinked={this.state.hasSearch} />
