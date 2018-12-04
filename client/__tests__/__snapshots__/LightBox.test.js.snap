@@ -1,5 +1,44 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<Lightbox/> - Component Matches the snapshot 1`] = `
+<div
+  className="app__lightbox__container"
+>
+  <div
+    className="app__lightbox__content"
+  >
+    <h2
+      className="app__lightbox__close"
+      onClick={[Function]}
+    >
+      ×
+    </h2>
+    <p
+      className="app__lightbox__prev"
+      onClick={[Function]}
+    >
+      Prev
+    </p>
+    <img
+      alt="My image"
+      src="https://avatars1.githubusercontent.com/u/19247005?s=60&v=4"
+    />
+    <h3
+      className="app__lightbox__title"
+    >
+      My image
+       
+    </h3>
+    <p
+      className="app__lightbox__next"
+      onClick={[Function]}
+    >
+      Next
+    </p>
+  </div>
+</div>
+`;
+
 exports[`<LoadMoreButton> Matches the snapshot 1`] = `
 <div
   className="app__lightbox__container"

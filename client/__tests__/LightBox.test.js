@@ -15,7 +15,7 @@ const image = {
     }
   }
 }
-describe('<LoadMoreButton>', () => {
+describe('<Lightbox/> - Component', () => {
   it('Should render component', () => {
     const wrapper = shallow(<LightBox image={image} next={()=> {}} prev={()=>{}} close={()=>{}} />);
     expect(wrapper.find('.app__lightbox__close').length).toBe(1);
